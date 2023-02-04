@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("Enemy觸發 撞到樹! 造成傷害:" + attackPower);
             tree.Damage(attackPower);
             GameManager.Instance.enemyList.Remove(this);
-            Destroy(this); //碰到樹就消失
+            Destroy(this.gameObject); //碰到樹就消失
         }
     }
 }
