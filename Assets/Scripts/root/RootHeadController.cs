@@ -6,6 +6,8 @@ public class RootHeadController : MonoBehaviour
 {
     [Tooltip("Grow Speed in meter/s")]
     public float growSpeed = 5;
+    public float refDist = 10;
+    public float diameter = 1;
 
     public List<GameObject> rootList;
     private Vector3 mousePosition;
@@ -18,14 +20,20 @@ public class RootHeadController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < rootList.Count - 1; i++)
+        if (Input.GetMouseButton(0))
         {
-            rootList[i+1].transform.position = rootList[i].transform.position;
-            rootList[i+1].transform.rotation = rootList[i].transform.rotation;
+            for (int i = rootList.Count - 1; i > 0; i--)
+            {
+                rootList[i].transform.position = rootList[i - 1].transform.position + (rootList[i].transform.position - rootList[i - 1].transform.position).normalized * diameter;
+                rootList[i].transform.rotation = rootList[i - 1].transform.rotation;
+            }
+
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position += (mousePosition - transform.position).normalized
+                * Mathf.Clamp01((mousePosition - transform.position).magnitude / refDist)
+                * growSpeed * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         }
 
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position += (mousePosition - transform.position).normalized * growSpeed / Time.deltaTime;
-        
     }
 }
