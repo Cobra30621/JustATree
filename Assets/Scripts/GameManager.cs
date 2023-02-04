@@ -16,11 +16,20 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager instance;
+    [SerializeField]
     public List<EnemyAI> enemyList = new List<EnemyAI>();
 
     public int nowWave = 0;
     /// <summary>每幾秒鐘出一波敵人 </summary>
-    public float nextWaveTime = 5;
+    public float nextWaveTime = 100;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
 
     private void Reset()
     {

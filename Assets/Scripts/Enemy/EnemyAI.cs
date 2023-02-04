@@ -27,13 +27,15 @@ public class EnemyAI : MonoBehaviour
         // Move enemy
         transform.position += new Vector3(speed * Time.deltaTime * direction, 0, 0);
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Enemy觸發 OnTriggerEnter!");
         TreeManager tree = other.GetComponent<TreeManager>();
         if (tree != null)
         {
+            Debug.Log("Enemy觸發 撞到樹! 造成傷害:" + attackPower);
             tree.Damage(attackPower);
+            GameManager.Instance.enemyList.Remove(this);
             Destroy(this); //碰到樹就消失
         }
     }

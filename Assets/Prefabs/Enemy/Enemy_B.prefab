@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2218967842243528821}
   - component: {fileID: 4316083896583544883}
   - component: {fileID: 8789332273136193527}
+  - component: {fileID: 311156055075090842}
   m_Layer: 0
   m_Name: Enemy_B
   m_TagString: Untagged
@@ -69,8 +70,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   life: 100
-  attackPower: 10
+  attackPower: 50
   hpBar: {fileID: 7006314581128324686}
+--- !u!61 &311156055075090842
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188423053716315975}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.77, y: 10.33}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.97, y: 10}
+  m_EdgeRadius: 0
 --- !u!1 &8102483094171291753
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,16 +7,16 @@ public class TreeManager : MonoBehaviour
 {
     int maxHealthPoint = 1000;
     int nowHealthPoint = 1000;
-    public Image healthBarFill;
-
+    [SerializeField]
+    HealthBar healthBar = null;
+    private void Start()
+    {
+        healthBar.SetHP(1000);
+    }
     public void Damage(int enemyAtk)
     {
         nowHealthPoint -= enemyAtk;
-        ResetUI();
-    }
-    public void ResetUI()
-    {
-        healthBarFill.fillAmount = nowHealthPoint / maxHealthPoint;
+        healthBar.LossHp(enemyAtk);
     }
 
 }
