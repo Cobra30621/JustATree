@@ -43,7 +43,7 @@ public class WeaponManager : MonoBehaviour
 
 	IEnumerator Shoot(Bullet.BulletType bulletType)
 	{
-		Bullet.BulletProperty property = properties[currentWeapon[bulletType] - 1];
+		Bullet.BulletProperty property = properties[Mathf.Min(currentWeapon[bulletType] - 1, properties.Count - 1)];
 		while (true)
 		{
 			yield return new WaitForSeconds(property.spawnTime);
