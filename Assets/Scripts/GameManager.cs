@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager instance;
+    public List<EnemyAI> enemyList = new List<EnemyAI>();
 
     public int nowWave = 0;
     /// <summary>每幾秒鐘出一波敵人 </summary>
