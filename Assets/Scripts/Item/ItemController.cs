@@ -14,6 +14,10 @@ public class ItemController : MonoBehaviour
 
     public ItemManager itemManager;
 
+    [Header("Current Item")] 
+    public Image currentItemImage;
+    public Text currentItemText;
+
     public ItemType testItemType;
     [ContextMenu("test")]
     public void Test()
@@ -31,6 +35,9 @@ public class ItemController : MonoBehaviour
         itemImage.sprite = itemData.sprite;
         itemNameText.text = itemData.name;
         itemDescriptionText.text = itemData.description;
+        
+        currentItemImage.sprite = itemData.sprite;
+        currentItemText.text = itemData.name;
         
         pickItemPanelAnimator.SetTrigger("Show");
     }
