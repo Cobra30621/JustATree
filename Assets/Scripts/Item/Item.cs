@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             _itemManager.OnItemPicked(itemType);
+            WeaponManager.Instance.GetWeapon(itemType);
             Destroy(this.gameObject);
         }
     }

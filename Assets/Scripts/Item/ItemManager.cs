@@ -5,6 +5,18 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public static ItemManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.Find("ItemManager").GetComponent<ItemManager>();
+            }
+            return instance;
+        }
+    }
+    private static ItemManager instance; 
     public ItemController itemController;
     public ItemStage itemStage;
     public ItemDataList itemDataList;

@@ -5,13 +5,6 @@ using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
-	public enum BulletType
-	{
-		APPLE,
-		SWORD,
-		COLA,
-		TRIDENT, // 三叉戟
-	}
 	
 	[Serializable]
 	public struct BulletProperty
@@ -25,7 +18,7 @@ public class Bullet : MonoBehaviour
 	[Serializable]
 	public struct BulletSprite
 	{
-		public BulletType type;
+		public ItemType type;
 		public Sprite sprite;
 	}
 
@@ -37,7 +30,7 @@ public class Bullet : MonoBehaviour
 	EnemyAI target;
 	BulletProperty property;
 
-	public void Init(WeaponManager weaponManager, EnemyAI target, BulletProperty property, BulletType type)
+	public void Init(WeaponManager weaponManager, EnemyAI target, BulletProperty property, ItemType type)
 	{
 		this.weaponManager = weaponManager;
 		this.target = target;

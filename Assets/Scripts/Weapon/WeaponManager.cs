@@ -4,12 +4,23 @@ using System.Collections.Generic;
 
 public class WeaponManager : MonoBehaviour
 {
-	
+
+	public static WeaponManager Instance
+	{
+		get
+		{
+			if (instance == null)
+			{
+				instance = GameObject.Find("WeaponManager").GetComponent<WeaponManager>();
+			}
+			return instance;
+		}
+	}
+	private static WeaponManager instance; 	
 	public List<Bullet.BulletProperty> properties = new List<Bullet.BulletProperty>();
 	public GameObject bulletPrefab;
 	
-	public Dictionary<Bullet.BulletType, int> currentWeapon = new Dictionary<Bullet.BulletType, int>();
-	public Dictionary<Bullet.BulletType, Coroutine> coroutines = new Dictionary<Bullet.BulletType, Coroutine>();
+	public Dictionary<ItemType, Coroutine> coroutines = new Dictionary<ItemType, Coroutine>();
 
 	// debug
 	public GameObject enemyAPrefab;
@@ -17,16 +28,8 @@ public class WeaponManager : MonoBehaviour
 	List<EnemyAI> enemyList;
 	float fireTime;
 
-	public void GetWeapon(Bullet.BulletType type)
+	public void GetWeapon(ItemType type)
 	{
-		if (currentWeapon.ContainsKey(type))
-		{
-			currentWeapon[type]++;
-		}
-		else
-		{
-			currentWeapon[type] = 1;
-		}
 
 		if (coroutines.ContainsKey(type))
 		{
@@ -41,9 +44,9 @@ public class WeaponManager : MonoBehaviour
 	{
 	}
 
-	IEnumerator Shoot(Bullet.BulletType bulletType)
+	IEnumerator Shoot(ItemType bulletType)
 	{
-		Bullet.BulletProperty property = properties[Mathf.Min(currentWeapon[bulletType] - 1, properties.Count - 1)];
+		Bullet.BulletProperty property = properties[Mathf.Min(ItemManager.Instance.hadPickedItems[bulletType] - 1, properties.Count - 1)];
 		while (true)
 		{
 			yield return new WaitForSeconds(property.spawnTime);
@@ -88,20 +91,20 @@ public class WeaponManager : MonoBehaviour
     {
         if (GUI.Button(new Rect(100,100,100,100),"Apple"))
         {
-			GetWeapon(Bullet.BulletType.APPLE);
+			GetWeapon(ItemType.Seed);
 			// Instantiate(enemyAPrefab, transform.position, transform.rotation);
         }
         if (GUI.Button(new Rect(100,200,100,100),"SWORD"))
         {
-			GetWeapon(Bullet.BulletType.SWORD);
+			GetWeapon(ItemType.Kirito);
         }
         if (GUI.Button(new Rect(100,300,100,100),"COLA"))
         {
-			GetWeapon(Bullet.BulletType.COLA);
+			GetWeapon(ItemType.Cola);
         }
         if (GUI.Button(new Rect(100,400,100,100),"TRIDENT"))
         {
-			GetWeapon(Bullet.BulletType.TRIDENT);
+			GetWeapon(ItemType.Trident);
         }
     }
 }
