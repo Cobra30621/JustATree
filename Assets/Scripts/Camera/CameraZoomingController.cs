@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraZoomingController : MonoBehaviour
+{
+    public float zoomingScale = 1;
+    public float maxZoomingScale = 5;
+    // init scale is camera size
+    private float initScale = 5;
+    private Vector3 initPos;
+    // Start is called before the first frame update
+    private void Awake()
+    {
+        initScale = GetComponent<Camera>().orthographicSize;
+        initPos = transform.position;
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void setCameraZoomingScale(float scale) {
+        GetComponent<Camera>().orthographicSize = initScale*Mathf.Clamp(scale,1,maxZoomingScale);
+        transform.position = new Vector3(initPos.x,(initPos.y - initScale * (Mathf.Clamp(scale, 1, maxZoomingScale) - 1)),-10);
+    }
+}
