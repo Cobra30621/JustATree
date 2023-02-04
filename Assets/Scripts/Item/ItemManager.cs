@@ -21,12 +21,7 @@ public class ItemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // LayerTriggerInit
-        LayerTrigger[] layerTriggers = FindObjectsOfType<LayerTrigger>();
-        foreach (LayerTrigger layerTrigger in layerTriggers)
-        {
-            layerTrigger.SetManager(this);
-        }
+        
         GameStart();
     }
 
@@ -61,8 +56,10 @@ public class ItemManager : MonoBehaviour
     public void ItemSpawn()
     {
         float preLayerY = 0;
+        float xScale = 0.5f;
         foreach (Layer layer in itemStage.Layers)
         {
+            
             foreach (ItemClip itemClip in layer.itemClips)
             {
                 ItemType itemType = itemClip.itemType;
@@ -70,13 +67,14 @@ public class ItemManager : MonoBehaviour
                 {
                     Item item = Instantiate(itemDataDictionary[itemType].prefab, itemSpawnTransform).GetComponent<Item>();
 
-                    float x = UnityEngine.Random.Range(-layerWidth, layerWidth);
-                    float y = - UnityEngine.Random.Range(preLayerY, layer.maxDepth);
+                    float x = UnityEngine.Random.Range(-layerWidth * xScale, layerWidth * xScale);
+                    float y = - UnityEngine.Random.Range(preLayerY + 0.5f, layer.maxDepth - 0.5f);
                     item.transform.position =  new Vector2(x, y);
                     item.SetManager(this);
                 }
             }
             preLayerY = layer.maxDepth;
+            xScale += 0.1f;
         }
     }
 
