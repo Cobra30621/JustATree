@@ -13,7 +13,7 @@ public class TreeManager : MonoBehaviour
     {
         healthBar.SetHP(1000);
     }
-    public void Damage(int enemyAtk)
+    public void TakeDamage(int enemyAtk)
     {
         nowHealthPoint -= enemyAtk;
         healthBar.LossHp(enemyAtk);

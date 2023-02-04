@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
             direction = 1;
 
         // Move enemy
-        // transform.position += new Vector3(speed * Time.deltaTime * direction, 0, 0);
+        transform.position += new Vector3(speed * Time.deltaTime * direction, 0, 0);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,9 +34,8 @@ public class EnemyAI : MonoBehaviour
         if (tree != null)
         {
             Debug.Log("Enemy觸發 撞到樹! 造成傷害:" + attackPower);
-            tree.Damage(attackPower);
-            GameManager.Instance.enemyList.Remove(this);
-            Destroy(this.gameObject); //碰到樹就消失
+            tree.TakeDamage(attackPower);
+            DestroySelf();
         }
     }
 
@@ -45,7 +44,13 @@ public class EnemyAI : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
-            Destroy(this);
+            DestroySelf();
         }
+    }
+
+    void DestroySelf()
+    {
+        GameManager.Instance.enemyList.Remove(this);
+        Destroy(this.gameObject); //碰到樹就消失
     }
 }

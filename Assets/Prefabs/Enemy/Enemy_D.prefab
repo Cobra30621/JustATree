@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  life: 40
+  hp: 40
   attackPower: 120
   hpBar: {fileID: 7446202854512145747}
 --- !u!61 &8840235131498845114
