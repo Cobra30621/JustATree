@@ -39,6 +39,8 @@ MonoBehaviour:
       count: 1
     - itemType: 4
       count: 2
+    - itemType: 2
+      count: 1
   - maxDepth: 40
     itemClips:
     - itemType: 1
@@ -47,11 +49,11 @@ MonoBehaviour:
       count: 2
     - itemType: 3
       count: 1
+    - itemType: 5
+      count: 1
   - maxDepth: 50
     itemClips:
     - itemType: 7
       count: 1
     - itemType: 4
-      count: 1
-    - itemType: 2
       count: 1

@@ -6,8 +6,8 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public ItemStage itemStage;
-    public List<GameObject> itemPrefabs;
-    public Dictionary<ItemType, GameObject> itemPrefabDictionary;
+    public ItemDataList itemDataList;
+    public Dictionary<ItemType, ItemData> itemDataDictionary;
     public Dictionary<ItemType, int> hadPickedItems;
     public Transform itemSpawnTransform;
 
@@ -32,17 +32,17 @@ public class ItemManager : MonoBehaviour
     public void GameStart()
     {
         // Item Dictionary Prefab
-        itemPrefabDictionary = new Dictionary<ItemType, GameObject>();
-        foreach (GameObject go in itemPrefabs)
+        itemDataDictionary = new Dictionary<ItemType, ItemData>();
+        foreach (ItemData item in itemDataList.itemDatas)
         {
-            Item item = go.GetComponent<Item>();
-            if (itemPrefabDictionary.ContainsKey(item.itemType))
+            // Item item = go.GetComponent<Item>();
+            if (itemDataDictionary.ContainsKey(item.itemType))
             {
                 Debug.LogWarning($"{item.name} 的 ItemType 與其他 Item 重複了");
             }
             else
             {
-                itemPrefabDictionary.Add(item.itemType, go);
+                itemDataDictionary.Add(item.itemType, item);
             }
         }
         ItemSpawn();
@@ -67,14 +67,8 @@ public class ItemManager : MonoBehaviour
                 ItemType itemType = itemClip.itemType;
                 for (int i = 0; i < itemClip.count; i++)
                 {
-                    Item item = Instantiate(itemPrefabDictionary[itemType], itemSpawnTransform).GetComponent<Item>();
+                    Item item = Instantiate(itemDataDictionary[itemType].prefab, itemSpawnTransform).GetComponent<Item>();
 
-                    // float x = UnityEngine.Random.Range(0f, 1f);
-                    // x = layerWidth * (1 - x * x);
-                    // if (UnityEngine.Random.Range(0, 2) == 0)
-                    // {
-                    //     x *= -1;
-                    // }
                     float x = UnityEngine.Random.Range(-layerWidth, layerWidth);
                     float y = - UnityEngine.Random.Range(preLayerY, layer.maxDepth);
                     item.transform.position =  new Vector2(x, y);
