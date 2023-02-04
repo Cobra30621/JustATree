@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         nowWave = 0;
     }
 
-    void GameOver()
+    public void GameOver()
     {
         //遊戲結束，Reset東西有的沒的
     }

@@ -17,6 +17,11 @@ public class TreeManager : MonoBehaviour
     {
         nowHealthPoint -= enemyAtk;
         healthBar.LossHp(enemyAtk);
+        if (nowHealthPoint <= 0)
+        {
+            //GameOver
+            GameManager.Instance.GameOver();
+        }
     }
 
 }
