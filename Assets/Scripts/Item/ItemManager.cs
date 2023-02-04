@@ -9,9 +9,11 @@ public class ItemManager : MonoBehaviour
     public List<GameObject> itemPrefabs;
     public Dictionary<ItemType, GameObject> itemPrefabDictionary;
     public Dictionary<ItemType, int> hadPickedItems;
+    public Transform itemSpawnTransform;
 
-    public Transform ItemSpawnTransform;
+    public float layerWidth;
 
+    public ItemType currentItemType;
     public int currentLayerIndex;
     
 
@@ -64,9 +66,14 @@ public class ItemManager : MonoBehaviour
                 ItemType itemType = itemClip.itemType;
                 for (int i = 0; i < itemClip.count; i++)
                 {
-                    Item item = Instantiate(itemPrefabDictionary[itemType], ItemSpawnTransform).GetComponent<Item>();
-                    
-                    float x = UnityEngine.Random.Range(-30, 30);
+                    Item item = Instantiate(itemPrefabDictionary[itemType], itemSpawnTransform).GetComponent<Item>();
+
+                    float x = UnityEngine.Random.Range(0f, 5f);
+                    x = layerWidth * (x * x) / 25;
+                    if (UnityEngine.Random.Range(0, 2) == 0)
+                    {
+                        x *= -1;
+                    }
                     float y = - UnityEngine.Random.Range(layer.minDepth, layer.maxDepth);
                     item.transform.position =  new Vector2(x, y);
                     item.SetManager(this);
@@ -78,6 +85,7 @@ public class ItemManager : MonoBehaviour
     public void OnItemPicked(ItemType itemType)
     {
         hadPickedItems[itemType] += 1;
+        currentItemType = itemType;
         Debug.Log($"Pick {itemType} , current count : {hadPickedItems[itemType]}");
     }
 
