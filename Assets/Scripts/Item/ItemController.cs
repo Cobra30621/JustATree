@@ -23,6 +23,10 @@ public class ItemController : MonoBehaviour
 
     public void ShowPickItemPanel(ItemType itemType)
     {
+        if (itemType == ItemType.Sky)
+        {
+            return;
+        }
         ItemData itemData = itemManager.itemDataDictionary[itemType];
         itemImage.sprite = itemData.sprite;
         itemNameText.text = itemData.name;
