@@ -59,6 +59,7 @@ public class ItemManager : MonoBehaviour
 
     public void ItemSpawn()
     {
+        float preLayerY = 0;
         foreach (Layer layer in itemStage.Layers)
         {
             foreach (ItemClip itemClip in layer.itemClips)
@@ -68,17 +69,19 @@ public class ItemManager : MonoBehaviour
                 {
                     Item item = Instantiate(itemPrefabDictionary[itemType], itemSpawnTransform).GetComponent<Item>();
 
-                    float x = UnityEngine.Random.Range(0f, 5f);
-                    x = layerWidth * (x * x) / 25;
-                    if (UnityEngine.Random.Range(0, 2) == 0)
-                    {
-                        x *= -1;
-                    }
-                    float y = - UnityEngine.Random.Range(layer.minDepth, layer.maxDepth);
+                    // float x = UnityEngine.Random.Range(0f, 1f);
+                    // x = layerWidth * (1 - x * x);
+                    // if (UnityEngine.Random.Range(0, 2) == 0)
+                    // {
+                    //     x *= -1;
+                    // }
+                    float x = UnityEngine.Random.Range(-layerWidth, layerWidth);
+                    float y = - UnityEngine.Random.Range(preLayerY, layer.maxDepth);
                     item.transform.position =  new Vector2(x, y);
                     item.SetManager(this);
                 }
             }
+            preLayerY = layer.maxDepth;
         }
     }
 
@@ -101,5 +104,6 @@ public class ItemManager : MonoBehaviour
 [Serializable]
 public enum ItemType
 {
-    Water, Kirito
+    Seed, Kirito, Trident,  Cola,
+    MuscleProtein, Tentacle, Sky, Core
 }

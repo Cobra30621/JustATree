@@ -13,9 +13,7 @@ public class ItemStage : ScriptableObject
 [Serializable]
 public class Layer
 {
-    public int layerIndex;
-    public int minDepth;
-    public int maxDepth;
+    public float maxDepth;
     public List<ItemClip> itemClips;
 }
 

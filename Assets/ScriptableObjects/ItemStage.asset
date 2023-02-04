@@ -13,17 +13,45 @@ MonoBehaviour:
   m_Name: ItemStage
   m_EditorClassIdentifier: 
   Layers:
-  - layerIndex: 0
-    minDepth: 0
-    maxDepth: 30
+  - maxDepth: 10
     itemClips:
     - itemType: 0
-      count: 5
-  - layerIndex: 0
-    minDepth: 30
-    maxDepth: 60
+      count: 1
+    - itemType: 2
+      count: 1
+    - itemType: 3
+      count: 1
+  - maxDepth: 20
+    itemClips:
+    - itemType: 0
+      count: 1
+    - itemType: 1
+      count: 1
+    - itemType: 2
+      count: 1
+    - itemType: 3
+      count: 1
+  - maxDepth: 30
+    itemClips:
+    - itemType: 0
+      count: 1
+    - itemType: 1
+      count: 1
+    - itemType: 4
+      count: 2
+  - maxDepth: 40
     itemClips:
     - itemType: 1
-      count: 3
-    - itemType: 0
-      count: 10
+      count: 1
+    - itemType: 4
+      count: 2
+    - itemType: 3
+      count: 1
+  - maxDepth: 50
+    itemClips:
+    - itemType: 7
+      count: 1
+    - itemType: 4
+      count: 1
+    - itemType: 2
+      count: 1
