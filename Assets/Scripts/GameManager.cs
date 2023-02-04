@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public List<EnemyAI> enemyList = new List<EnemyAI>();
 
     public int nowWave = 0;
-    /// <summary>¨C´X¬íÄÁ¥X¤@ªi¼Ä¤H </summary>
+    /// <summary>æ¯å¹¾ç§’é˜å‡ºä¸€æ³¢æ•µäºº </summary>
     public float nextWaveTime = 100;
 
     private void Awake()
@@ -38,6 +38,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        //¹CÀ¸µ²§ô¡AResetªF¦è¦³ªº¨Sªº
+        //éŠæˆ²çµæŸï¼ŒResetæ±è¥¿æœ‰çš„æ²’çš„
     }
 }
