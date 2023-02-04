@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public ItemController itemController;
     public ItemStage itemStage;
     public ItemDataList itemDataList;
     public Dictionary<ItemType, ItemData> itemDataDictionary;
@@ -84,6 +85,7 @@ public class ItemManager : MonoBehaviour
         hadPickedItems[itemType] += 1;
         currentItemType = itemType;
         Debug.Log($"Pick {itemType} , current count : {hadPickedItems[itemType]}");
+        itemController.ShowPickItemPanel(itemType);
     }
 
     public void OnEnterLayer(int layerIndex)

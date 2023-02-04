@@ -15,29 +15,36 @@ MonoBehaviour:
   itemDatas:
   - itemType: 0
     name: "\u7A2E\u5B50"
+    description: "\u7A2E\u5B50\u7A2E\u5B50"
     prefab: {fileID: 6976690590864017393, guid: 81b135d174eb7bb4f867e7697ff2bcd7, type: 3}
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: cfb478bae57c99f4f8d851a2f9f64a7f, type: 3}
   - itemType: 1
     name: "\u96D9\u5200"
+    description: "\u661FX\u6A39\uFF0C\u661F\u5E74\u5FEB\u6A02"
     prefab: {fileID: 1526513891915674969, guid: 2da206991211f524f9f01ffdf971c869, type: 3}
     sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
   - itemType: 2
     name: "\u4E09\u53C9\u6222"
+    description: A
     prefab: {fileID: 1996812213883844329, guid: 09f94e2722844674b9d57b496678f191, type: 3}
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: 29828d6bd69ee15449892f562786c564, type: 3}
   - itemType: 3
     name: "\u5FEB\u6A02\u6C34"
+    description: "\u6211\u597D\u5FEB\u6A02\u554A"
     prefab: {fileID: 6164846953919771953, guid: f7d15513dade3a24e96fa49eec89d031, type: 3}
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: f3e0b9bf98672264bb9b5f8ff6d93066, type: 3}
   - itemType: 4
-    name: "\u808C\u8089\u86CB\u767D"
+    name: "\u4E73\u6E05"
+    description: "\u52AA\u529B\u3001\u672A\u4F86\u3001A beautiful star"
     prefab: {fileID: 1559975746822796605, guid: 514ef57a8ae9e5546b113d0b02260ada, type: 3}
     sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
   - itemType: 5
     name: "\u795E\u79D8\u773C\u775B"
+    description: "\u89F8\u624B\u8B9A"
     prefab: {fileID: 8527785699739534852, guid: 45a60966dcbff1842bc00403bd0b22b6, type: 3}
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: b6afb59dd825a324fb1ebfb31f69acf3, type: 3}
   - itemType: 7
     name: "\u6838\u5FC3"
+    description: "\u6838\u5FC3"
     prefab: {fileID: 5561772839846565066, guid: c0066d86cd886fb44a9d59c01cab0559, type: 3}
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: fd664ab4e6742c34a96d4b8acb0e1a2f, type: 3}

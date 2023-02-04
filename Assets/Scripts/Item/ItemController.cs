@@ -28,7 +28,6 @@ public class ItemController : MonoBehaviour
         itemNameText.text = itemData.name;
         itemDescriptionText.text = itemData.description;
         
-        pickItemPanel.SetActive(true);
         pickItemPanelAnimator.SetTrigger("Show");
     }
 }
