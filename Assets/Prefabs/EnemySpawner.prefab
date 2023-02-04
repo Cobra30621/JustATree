@@ -1,0 +1,265 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8055549901370721113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8055549901370721110}
+  m_Layer: 0
+  m_Name: EnemyRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8055549901370721110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055549901370721113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8055549903299112217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8055549902121524759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8055549902121524756}
+  m_Layer: 0
+  m_Name: SpawnPointL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8055549902121524756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055549902121524759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8055549903299112217}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8055549902889011228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8055549902889011229}
+  m_Layer: 0
+  m_Name: SpawnPointR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8055549902889011229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055549902889011228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8055549903299112217}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8055549903299112216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8055549903299112217}
+  - component: {fileID: 8055549903299112214}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8055549903299112217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055549903299112216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8055549901370721110}
+  - {fileID: 8055549902121524756}
+  - {fileID: 8055549902889011229}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8055549903299112214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055549903299112216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a6ff108cbea0846a9407fd0776a3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 7726392002487712937, guid: a2a957ecfb5be8047973bb554fe6c02a, type: 3}
+  - {fileID: 5188423053716315975, guid: b30ef60d11a39504bbb85882ce730f99, type: 3}
+  - {fileID: 2792204189358059576, guid: 47a2a41251a5c03469b3faa5027ab99e, type: 3}
+  - {fileID: 2792204189358059576, guid: 212f679295289a94ba9432b3b93ec7bc, type: 3}
+  enemyRoot: {fileID: 8055549901370721110}
+  waveDatas:
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 3
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 3
+      enemyType: 0
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 5
+      enemyType: 0
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 2
+      enemyType: 1
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 6
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 6
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 3
+      enemyType: 1
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 2
+      enemyType: 2
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 2
+      enemyType: 2
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 4
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 4
+      enemyType: 0
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 4
+      enemyType: 2
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 2
+      enemyType: 3
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 2
+      enemyType: 3
+  - enemySpawnData:
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 8055549902121524756}
+      count: 3
+      enemyType: 3
+    - spawnPoint: {fileID: 8055549902889011229}
+      count: 3
+      enemyType: 3

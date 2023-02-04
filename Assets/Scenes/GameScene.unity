@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList: []
   nowWave: 0
-  nextWaveTime: 1000
+  nextWaveTime: 15
 --- !u!4 &210442609
 Transform:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &441639160
 PrefabInstance:
@@ -223,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5478053790982064582, guid: 486918ca1a40ef04cb257239c4cfa35c, type: 3}
       propertyPath: m_Name
-      value: ROOT (1)
+      value: ROOT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486918ca1a40ef04cb257239c4cfa35c, type: 3}
@@ -288,7 +288,7 @@ Transform:
   m_Children:
   - {fileID: 1530290419}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &741402215
 GameObject:
@@ -321,6 +321,86 @@ Transform:
   m_Father: {fileID: 1359022119}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &814184252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814184253}
+  - component: {fileID: 814184255}
+  - component: {fileID: 814184254}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &814184253
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814184252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.065529004, y: 0.065529004, z: 0.65529}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8173829961075366529}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -6.4, y: -0.0185}
+  m_SizeDelta: {x: 65.244, y: 31.2171}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &814184254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814184252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 26
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 127
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u8840\u91CF"
+--- !u!222 &814184255
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814184252}
+  m_CullTransparentMesh: 1
 --- !u!1 &1236512034
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +465,7 @@ Transform:
   - {fileID: 468761386}
   - {fileID: 1236512035}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1359022120
 MonoBehaviour:
@@ -415,6 +495,32 @@ MonoBehaviour:
       enemyType: 0
   - enemySpawnData:
     - spawnPoint: {fileID: 468761386}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 1236512035}
+      count: 5
+      enemyType: 0
+  - enemySpawnData:
+    - spawnPoint: {fileID: 468761386}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 1236512035}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 468761386}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 1236512035}
+      count: 2
+      enemyType: 1
+  - enemySpawnData:
+    - spawnPoint: {fileID: 468761386}
+      count: 6
+      enemyType: 0
+    - spawnPoint: {fileID: 1236512035}
+      count: 6
+      enemyType: 0
+    - spawnPoint: {fileID: 468761386}
       count: 3
       enemyType: 1
     - spawnPoint: {fileID: 1236512035}
@@ -422,11 +528,80 @@ MonoBehaviour:
       enemyType: 1
   - enemySpawnData:
     - spawnPoint: {fileID: 468761386}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 1236512035}
+      count: 5
+      enemyType: 0
+    - spawnPoint: {fileID: 468761386}
       count: 3
-      enemyType: 2
+      enemyType: 1
     - spawnPoint: {fileID: 1236512035}
       count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 468761386}
+      count: 2
       enemyType: 2
+    - spawnPoint: {fileID: 1236512035}
+      count: 2
+      enemyType: 2
+  - enemySpawnData:
+    - spawnPoint: {fileID: 468761386}
+      count: 4
+      enemyType: 0
+    - spawnPoint: {fileID: 1236512035}
+      count: 4
+      enemyType: 0
+    - spawnPoint: {fileID: 468761386}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 1236512035}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 468761386}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 1236512035}
+      count: 4
+      enemyType: 2
+  - enemySpawnData:
+    - spawnPoint: {fileID: 468761386}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 1236512035}
+      count: 2
+      enemyType: 1
+    - spawnPoint: {fileID: 468761386}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 1236512035}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 468761386}
+      count: 2
+      enemyType: 3
+    - spawnPoint: {fileID: 1236512035}
+      count: 2
+      enemyType: 3
+  - enemySpawnData:
+    - spawnPoint: {fileID: 468761386}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 1236512035}
+      count: 3
+      enemyType: 1
+    - spawnPoint: {fileID: 468761386}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 1236512035}
+      count: 4
+      enemyType: 2
+    - spawnPoint: {fileID: 468761386}
+      count: 3
+      enemyType: 3
+    - spawnPoint: {fileID: 1236512035}
+      count: 3
+      enemyType: 3
 --- !u!1 &1530290417
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +768,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800486014
 GameObject:
@@ -661,7 +836,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1928522943
 GameObject:
@@ -675,6 +850,7 @@ GameObject:
   - component: {fileID: 1928522946}
   - component: {fileID: 1928522944}
   - component: {fileID: 1928522947}
+  - component: {fileID: 1928522948}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -747,7 +923,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1928522946
 MonoBehaviour:
@@ -788,6 +964,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1928522948
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928522943}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!114 &328479596279908089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +1138,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8173829961075366529}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1011,10 +1208,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 814184253}
   - {fileID: 4243913686924011757}
   - {fileID: 8749688999960545027}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1034,7 +1232,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8173829961075366529}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
