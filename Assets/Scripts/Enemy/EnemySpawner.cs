@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
         public int enemyType;
     }
 
-    //¥Í©Ç¸ê®Æ³]©w
+    //ç”Ÿæ€ªè³‡æ–™è¨­å®š
     public List<WaveData> waveDatas;
 
     private float timer;
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        //®É¶¡¨ì¡A¥Í¦¨¤U¤@ªi©Ç
+        //æ™‚é–“åˆ°ï¼Œç”Ÿæˆä¸‹ä¸€æ³¢æ€ª
         if (timer >= GameManager.Instance.nextWaveTime)
         {
             timer = 0;
@@ -39,13 +39,15 @@ public class EnemySpawner : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Instantiate(enemyPrefabs[0], Vector3.right * 10, Quaternion.identity);
+            EnemyAI e = Instantiate(enemyPrefabs[0], Vector3.right * 10, Quaternion.identity).GetComponent<EnemyAI>();
+
+            GameManager.Instance.enemyList.Add(e);
         }
     }
     public void SpawnWaveEnemy()
     {
         WaveData nowWaveData;
-        //¶W¥X½d³ò
+        //è¶…å‡ºç¯„åœ
         if (GameManager.Instance.nowWave > waveDatas.Count - 1)
         {
             nowWaveData = waveDatas[waveDatas.Count - 1];
@@ -72,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
         int count = spawnData.count;
         int enemyType = spawnData.enemyType;
 
-        int dir = spawnPosition.x > 0 ? 1 : -1;  //§PÂ_©Çª«¥Í¦¨¦b¥ªÃäÁÙ¬O¥kÃä
+        int dir = spawnPosition.x > 0 ? 1 : -1;  //åˆ¤æ–·æ€ªç‰©ç”Ÿæˆåœ¨å·¦é‚Šé‚„æ˜¯å³é‚Š
 
         for (int i = 0; i < count; i++)
         {

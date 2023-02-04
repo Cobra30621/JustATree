@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float speed = 10f;
-    public int life = 100;
+    public int hp = 100;
     public int attackPower = 10;
 
     public HealthBar hpBar = null;
@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        hpBar.SetHP(life);
+        hpBar.SetHP(hp);
     }
     void Update()
     {
@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
             direction = 1;
 
         // Move enemy
-        transform.position += new Vector3(speed * Time.deltaTime * direction, 0, 0);
+        // transform.position += new Vector3(speed * Time.deltaTime * direction, 0, 0);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,6 +37,15 @@ public class EnemyAI : MonoBehaviour
             tree.Damage(attackPower);
             GameManager.Instance.enemyList.Remove(this);
             Destroy(this.gameObject); //碰到樹就消失
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(this);
         }
     }
 }
