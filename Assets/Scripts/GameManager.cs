@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     /// <summary>每幾秒鐘出一波敵人 </summary>
     public float nextWaveTime = 100;
 
+    [Header("End Prefabs")] 
+    public GameObject[] EndPrefabs;
+
+    public Transform EndSpawnTransform;
+
     private void Awake()
     {
         if (instance == null)
@@ -40,4 +45,31 @@ public class GameManager : MonoBehaviour
     {
         //遊戲結束，Reset東西有的沒的
     }
+
+    public EndType testEnd;
+    [ContextMenu("test")]
+    public void Test()
+    {
+        PlayEnd(testEnd);
+    }
+    
+    public void PlayEnd(EndType endType )
+    {
+        switch (endType)
+        {
+            case EndType.TreeDied:
+                Instantiate(EndPrefabs[0], EndSpawnTransform);
+                break;
+        }
+    }
+    
 }
+
+public enum EndType
+{
+    TreeDied, TimeOut, Core, Tentacle, Sky, MuscleProtein
+}
+
+// public class EndClip{
+//     
+// }
