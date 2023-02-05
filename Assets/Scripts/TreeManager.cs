@@ -35,6 +35,7 @@ public class TreeManager : MonoBehaviour
         {
             //GameOver
             GameManager.Instance.GameOver();
+            GameManager.Instance.PlayEnd(EndType.TreeDied);
         }
     }
 
