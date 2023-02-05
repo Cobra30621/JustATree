@@ -9,6 +9,10 @@ public class CameraZoomingController : MonoBehaviour
     // init scale is camera size
     private float initScale = 5;
     private Vector3 initPos;
+    
+    public float groundDepth;
+    public float groundWidth;
+    public Transform playerTransform;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -20,7 +24,17 @@ public class CameraZoomingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        float y =  - playerTransform.position.y;
+        float scaleY = ((y + 10f)  / groundDepth) * maxZoomingScale;
+        float x = Mathf.Abs(playerTransform.position.x);
+        float scaleX =  (2 * x  / groundWidth) * maxZoomingScale;
+        float tempScale =  Mathf.Max(scaleY, scaleX);
+        
+        if (tempScale > zoomingScale)
+        {
+            zoomingScale = tempScale;
+        }
+        setCameraZoomingScale(zoomingScale);
     }
 
     public void setCameraZoomingScale(float scale) {
