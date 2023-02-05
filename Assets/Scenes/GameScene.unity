@@ -654,6 +654,9 @@ MonoBehaviour:
   - {fileID: 9174141325161053647, guid: ba374b149ebbc8345ace91144f242d21, type: 3}
   - {fileID: 7815954881152800374, guid: 83797ac55278df74d9d847e283523df0, type: 3}
   - {fileID: 7104106213221743818, guid: 5e0e54420eeb86240994d557006507b1, type: 3}
+  - {fileID: 7104106213221743818, guid: 0748aa147a15970439bfafa41086ab68, type: 3}
+  - {fileID: 7104106213221743818, guid: 5e0e54420eeb86240994d557006507b1, type: 3}
+  - {fileID: 7104106213221743818, guid: 9defadca1e0a57442b78ed0054e3ae7f, type: 3}
   EndSpawnTransform: {fileID: 766134833}
   start_time: 120
   timer: 0
