@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 9174141325161053646}
   - component: {fileID: 9174141325161053633}
   - component: {fileID: 5103122607541161636}
+  - component: {fileID: 6806513227163090371}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -463,3 +464,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6806513227163090371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174141325161053647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ba48c51d3cac14c8489f11de4ac64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
