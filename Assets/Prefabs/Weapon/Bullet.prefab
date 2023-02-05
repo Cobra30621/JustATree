@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: 21300000, guid: f3e0b9bf98672264bb9b5f8ff6d93066, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c782d29741413ef4d853149e33bdbfa9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,13 +101,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSprites:
   - type: 0
-    sprite: {fileID: 21300000, guid: cfb478bae57c99f4f8d851a2f9f64a7f, type: 3}
+    sprite: {fileID: 21300000, guid: 1d2b4a132d96894489d34e99bce34ae7, type: 3}
   - type: 1
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: c782d29741413ef4d853149e33bdbfa9, type: 3}
   - type: 3
-    sprite: {fileID: 21300000, guid: f3e0b9bf98672264bb9b5f8ff6d93066, type: 3}
+    sprite: {fileID: 21300000, guid: c782d29741413ef4d853149e33bdbfa9, type: 3}
   - type: 2
-    sprite: {fileID: 21300000, guid: 29828d6bd69ee15449892f562786c564, type: 3}
+    sprite: {fileID: 21300000, guid: c782d29741413ef4d853149e33bdbfa9, type: 3}
   speed: 15
   sprite: {fileID: 8719086106820153065}
 --- !u!50 &452322506207996118
