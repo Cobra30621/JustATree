@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,12 @@ public class ItemController : MonoBehaviour
         ShowPickItemPanel(testItemType);
     }
 
+    void Start()
+    {
+        currentItemImage.enabled = false;
+        currentItemText.text = "";
+    }
+
     public void ShowPickItemPanel(ItemType itemType)
     {
         if (itemType == ItemType.Sky)
@@ -36,9 +43,11 @@ public class ItemController : MonoBehaviour
         itemNameText.text = itemData.name;
         itemDescriptionText.text = itemData.description;
         
+        currentItemImage.enabled = true;
         currentItemImage.sprite = itemData.sprite;
         currentItemText.text = itemData.name;
         
         pickItemPanelAnimator.SetTrigger("Show");
+        AudioManager.Instance.StartPlayOnce(6);
     }
 }

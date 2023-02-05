@@ -52,6 +52,7 @@ public class WeaponManager : MonoBehaviour
 			yield return new WaitForSeconds(property.spawnTime);
 			GameObject bulletObj = Instantiate(bulletPrefab, transform.position, transform.rotation);
 			Bullet bullet = bulletObj.GetComponent<Bullet>();
+			AudioManager.Instance.StartPlayOnce(1);
 		
 			EnemyAI closestEnemy = null;
 			closestEnemy = GetClosestEnemy(bulletObj);

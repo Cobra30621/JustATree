@@ -11,7 +11,7 @@ public class TreeManager : MonoBehaviour
     HealthBar healthBar = null;
     [SerializeField]
     Animator treeAnimator = null;
-    /// <summary>¹ïÀ³¨ì°Êµe¦WºÙ </summary>
+    /// <summary>å°æ‡‰åˆ°å‹•ç•«åç¨± </summary>
     public enum TreeAnimationStatus
     {
         Seed = 0,
@@ -48,26 +48,29 @@ public class TreeManager : MonoBehaviour
             case TreeAnimationStatus.Seed:
                 nowStatus = TreeAnimationStatus.Sapling;
                 treeAnimator.SetTrigger(TreeAnimationStatus.SeedToSapling.ToString());
-                Debug.Log("¾ğª¬ºA¤Á´«: SeedToSapling");
+                Debug.Log("æ¨¹ç‹€æ…‹åˆ‡æ›: SeedToSapling");
+                // AudioManager.Instance.StartPlayOnce(7);
                 break;
             case TreeAnimationStatus.Sapling:
                 if (totalItemCount >= 3)
                 {
                     nowStatus = TreeAnimationStatus.Tree;
                     treeAnimator.SetTrigger(TreeAnimationStatus.SaplingToTree.ToString());
-                    Debug.Log("¾ğª¬ºA¤Á´«: SaplingToTree");
+                    Debug.Log("æ¨¹ç‹€æ…‹åˆ‡æ›: SaplingToTree");
                 }
+                // AudioManager.Instance.StartPlayOnce(7);
                 break;
             case TreeAnimationStatus.Tree:
-                //§PÂ_¸Ó¦¸¨ú±oªºª««~¬O§_¤j©ó¤T­Ó ¨Ó¤Á´«°Êµeª¬ºA
+                //åˆ¤æ–·è©²æ¬¡å–å¾—çš„ç‰©å“æ˜¯å¦å¤§æ–¼ä¸‰å€‹ ä¾†åˆ‡æ›å‹•ç•«ç‹€æ…‹
                 if (getItemTypeCount >= 3)
                 {
-                    Debug.Log("¾ğª¬ºA¤Á´«: skin " + iType.ToString());
+                    Debug.Log("æ¨¹ç‹€æ…‹åˆ‡æ›: skin " + iType.ToString());
                     if (iType == ItemType.Cola || iType == ItemType.Kirito || iType == ItemType.Trident)
                     {
                         treeAnimator.SetTrigger(iType.ToString());
                     }
                 }
+                AudioManager.Instance.StartPlayOnce(7);
                 break;
             default:
                 break;

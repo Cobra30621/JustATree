@@ -25,7 +25,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
   - itemType: 2
     name: "\u4E09\u53C9\u6222"
-    description: A
+    description: Made from atlantis
     prefab: {fileID: 1996812213883844329, guid: 09f94e2722844674b9d57b496678f191, type: 3}
     sprite: {fileID: 21300000, guid: 29828d6bd69ee15449892f562786c564, type: 3}
   - itemType: 3
@@ -39,8 +39,8 @@ MonoBehaviour:
     prefab: {fileID: 1559975746822796605, guid: 514ef57a8ae9e5546b113d0b02260ada, type: 3}
     sprite: {fileID: 21300000, guid: 3ed5a3bbc437c3f49af7b702772393b0, type: 3}
   - itemType: 5
-    name: "\u795E\u79D8\u773C\u775B"
-    description: "\u89F8\u624B\u8B9A"
+    name: ??????
+    description: "\u9015\uFF62\u9015\u6EC9\uFF7A\u3089\uFF62\uFF7C\u8B41\uFFFD\uFF6D\uFFFD"
     prefab: {fileID: 8527785699739534852, guid: 45a60966dcbff1842bc00403bd0b22b6, type: 3}
     sprite: {fileID: 21300000, guid: b6afb59dd825a324fb1ebfb31f69acf3, type: 3}
   - itemType: 7

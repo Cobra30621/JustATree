@@ -49,11 +49,12 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void StartPlayLoop(int index)
+    public void StartPlayLoop(int index, float volume = 1)
     {
         if (SFXList != null && index < SFXList.Count)
         {
             audioSource.loop = true;
+            audioSource.volume = volume;
             if (audioSource.isPlaying)
             {
                 audioSource.Stop();

@@ -102,15 +102,27 @@ public class ItemManager : MonoBehaviour
         hadPickedItems[itemType] += 1;
         currentItemType = itemType;
         Debug.Log($"Pick {itemType} , current count : {hadPickedItems[itemType]}");
-        itemController.ShowPickItemPanel(itemType);
+        if (hadPickedItems[itemType] == 1)
+        {
+            itemController.ShowPickItemPanel(itemType);
+        }
         
         // Play End
         if (itemType == ItemType.Tentacle)
+        {
             GameManager.Instance.PlayEnd(EndType.Tentacle);
+            AudioManager.Instance.StartPlayOnce(13);
+        }
         if (itemType == ItemType.Core)
+        {
             GameManager.Instance.PlayEnd(EndType.Core);
+            AudioManager.Instance.StartPlayOnce(14);
+        }
         if (itemType == ItemType.Sky)
+        {
             GameManager.Instance.PlayEnd(EndType.Sky);
+            AudioManager.Instance.StartPlayOnce(12);
+        }
         if(hadPickedItems[ItemType.MuscleProtein] == 5)
             GameManager.Instance.PlayEnd(EndType.MuscleProtein);
 

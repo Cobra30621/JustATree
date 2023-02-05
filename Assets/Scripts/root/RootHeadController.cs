@@ -76,13 +76,14 @@ public class RootHeadController : MonoBehaviour
             }
             if (!isMoving)
             {
-                AudioManager.Instance.StartPlayLoop(5);
+                AudioManager.Instance.StartPlayLoop(5, 0.6f);
                 //print("run");
                 isMoving = true;
             }
         }
         else
         {
+
             // if not moving than stop sound 
             if (isMoving)
             {

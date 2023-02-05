@@ -33,6 +33,7 @@ public class EnemyAI : MonoBehaviour
         TreeManager tree = other.GetComponent<TreeManager>();
         if (tree != null)
         {
+            AudioManager.Instance.StartPlayOnce(4);
             Debug.Log("Enemy觸發 撞到樹! 造成傷害:" + attackPower);
             tree.TakeDamage(attackPower);
             DestroySelf();

@@ -110,6 +110,8 @@ public class GameManager : MonoBehaviour
         if (EndPrefabs.Length > (int)endType)
         {
             Instantiate(EndPrefabs[(int)endType], EndSpawnTransform);
+            AudioManager.Instance.StartPlayOnce(11);
+
             Debug.Log($"播放結局{endType}");
         }
         else

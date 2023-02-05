@@ -81,6 +81,7 @@ public class Bullet : MonoBehaviour
 		if (enemy != null)
 		{
 			enemy.TakeDamage(property.damage);
+			AudioManager.Instance.StartPlayOnce(3);
 			Destroy(gameObject); 
 		}
 	}
