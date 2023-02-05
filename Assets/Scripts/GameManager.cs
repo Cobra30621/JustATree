@@ -22,9 +22,6 @@ public class GameManager : MonoBehaviour
     public List<EnemyAI> enemyList = new List<EnemyAI>();
 
     [SerializeField]
-    Transform headObj = null;
-
-    [SerializeField]
     public float itemShowDistance = 10f;
 
     public Transform headTransform;
@@ -104,13 +101,13 @@ public class GameManager : MonoBehaviour
 
     public float GetDistanceFromHead(Transform obj)
     {
-        return Vector3.Distance(headObj.position, obj.position);
+        return Vector3.Distance(headTransform.position, obj.position);
     }
 }
 
 public enum EndType
 {
-    TreeDied = 0, TimeOut = 1, Core = 2, Tentacle = 3, Sky= 4, MuscleProtein = 5
+    TreeDied = 0, TimeOut = 1, Core = 2, Tentacle = 3, Sky = 4, MuscleProtein = 5
 }
 
 // public class EndClip{

@@ -80,15 +80,9 @@ public class RootHeadController : MonoBehaviour
                 //print("run");
                 isMoving = true;
             }
-            drawController.StartLine();
         }
         else
         {
-            if (Input.GetMouseButtonUp(0))
-            {
-                drawController.FinishLine();
-            }
-
             // if not moving than stop sound 
             if (isMoving)
             {
