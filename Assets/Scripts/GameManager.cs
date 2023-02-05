@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
 
 public enum EndType
 {
-    TreeDied = 0, TimeOut = 1, Core = 2, Tentacle = 3, Sky= 4, MuscleProtein=5
+    TreeDied = 0, TimeOut = 1, Core = 2, Tentacle = 3, Sky= 4, MuscleProtein = 5
 }
 
 // public class EndClip{
