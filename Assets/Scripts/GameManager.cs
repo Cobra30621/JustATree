@@ -60,6 +60,25 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Countdown();
+
+        if(Input.GetKeyDown(KeyCode.Q)){
+            PlayEnd(EndType.TreeDied);
+        }
+        if(Input.GetKeyDown(KeyCode.W)){
+            PlayEnd(EndType.TimeOut);
+        }
+        if(Input.GetKeyDown(KeyCode.E)){
+            PlayEnd(EndType.Core);
+        }
+        if(Input.GetKeyDown(KeyCode.R)){
+            PlayEnd(EndType.Tentacle);
+        }
+        if(Input.GetKeyDown(KeyCode.T)){
+            PlayEnd(EndType.Sky);
+        }
+        if(Input.GetKeyDown(KeyCode.Y)){
+            PlayEnd(EndType.MuscleProtein);
+        }
     }
 
     void Countdown()
