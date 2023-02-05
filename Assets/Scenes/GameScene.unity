@@ -653,6 +653,7 @@ MonoBehaviour:
   EndPrefabs:
   - {fileID: 9174141325161053647, guid: ba374b149ebbc8345ace91144f242d21, type: 3}
   - {fileID: 9185630409426316417, guid: 0b465d28dee6f724aa1b1f793f4cb3ad, type: 3}
+  - {fileID: 7104106213221743818, guid: 5e0e54420eeb86240994d557006507b1, type: 3}
   EndSpawnTransform: {fileID: 766134833}
   start_time: 120
   timer: 0
