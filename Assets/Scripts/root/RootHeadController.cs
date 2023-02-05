@@ -11,7 +11,7 @@ public class RootHeadController : MonoBehaviour
     public float diameter = 1;
     public bool snakeMode = false;
     public List<GameObject> rootList;
-    private Vector3 mousePosition;
+    private GameObject mousePosition;
     public bool isMoving = false;
 
     public float spawnTimeCooling = 0.05f;
@@ -31,6 +31,7 @@ public class RootHeadController : MonoBehaviour
     {
         initPos = transform.position;
         GameManager.Instance.headTransform = transform;
+        mousePosition = new GameObject();
     }
 
     // Update is called once per frame
@@ -46,37 +47,38 @@ public class RootHeadController : MonoBehaviour
                     rootList[i].transform.rotation = rootList[i - 1].transform.rotation;
                 }
 
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                transform.position += (mousePosition - transform.position).normalized
-                    * Mathf.Clamp01((mousePosition - transform.position).magnitude / refDist)
+                mousePosition.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                transform.position += (mousePosition.transform.position - transform.position).normalized
+                    * Mathf.Clamp01((mousePosition.transform.position - transform.position).magnitude / refDist)
                     * growSpeed * Time.deltaTime;
                 transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
 
             }
             else
             {
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (spawnTimer<=0)
                 {
                     newBody = Instantiate(newRootSegment);
                     newBody.transform.position = transform.position;
                     newBody.transform.rotation = transform.rotation;
                     rootList.Add(newBody);
-                    transform.position += (mousePosition - transform.position).normalized * diameter;
+                    transform.position += (mousePosition.transform.position - transform.position).normalized * diameter;
                     //transform.rotation
-
+                    mousePosition.transform.position += new Vector3(0, 0, 100);
+                    transform.LookAt(mousePosition.transform, Vector3.back);
                     // set z to 0
                     transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
                     // reset spawn time
                     spawnTimer = Mathf.Clamp(spawnTimeCooling * 1f / ( 0.00001f  + 
-                        Mathf.Clamp01((mousePosition - transform.position).magnitude 
+                        Mathf.Clamp01((mousePosition.transform.position - transform.position).magnitude 
                         / refDist)) , spawnTimeCooling ,10f); 
                 }
             }
             if (!isMoving)
             {
                 AudioManager.Instance.StartPlayLoop(5);
-                print("run");
+                //print("run");
                 isMoving = true;
             }
             drawController.StartLine();

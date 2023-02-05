@@ -44,3 +44,6 @@ TagManager:
   - name: Root
     uniqueID: 2971898973
     locked: 0
+  - name: player
+    uniqueID: 2947716661
+    locked: 0
