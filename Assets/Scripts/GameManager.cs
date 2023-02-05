@@ -55,28 +55,35 @@ public class GameManager : MonoBehaviour
     {
         nowWave = 0;
         timer = start_time;
+        gameOver = false;
     }
 
     void Update()
     {
         Countdown();
 
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             PlayEnd(EndType.TreeDied);
         }
-        if(Input.GetKeyDown(KeyCode.W)){
+        if (Input.GetKeyDown(KeyCode.W))
+        {
             PlayEnd(EndType.TimeOut);
         }
-        if(Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             PlayEnd(EndType.Core);
         }
-        if(Input.GetKeyDown(KeyCode.R)){
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             PlayEnd(EndType.Tentacle);
         }
-        if(Input.GetKeyDown(KeyCode.T)){
+        if (Input.GetKeyDown(KeyCode.T))
+        {
             PlayEnd(EndType.Sky);
         }
-        if(Input.GetKeyDown(KeyCode.Y)){
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
             PlayEnd(EndType.MuscleProtein);
         }
     }
@@ -96,6 +103,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         //遊戲結束，Reset東西有的沒的
+        gameOver = true;
     }
 
     public EndType testEnd;

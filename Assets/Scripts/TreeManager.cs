@@ -11,6 +11,7 @@ public class TreeManager : MonoBehaviour
     HealthBar healthBar = null;
     [SerializeField]
     Animator treeAnimator = null;
+
     /// <summary>對應到動畫名稱 </summary>
     public enum TreeAnimationStatus
     {
@@ -31,7 +32,7 @@ public class TreeManager : MonoBehaviour
     {
         nowHealthPoint -= enemyAtk;
         healthBar.LossHp(enemyAtk);
-        if (nowHealthPoint <= 0)
+        if (nowHealthPoint <= 0 && !GameManager.Instance.gameOver)
         {
             //GameOver
             GameManager.Instance.GameOver();
