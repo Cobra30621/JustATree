@@ -1396,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LineMask
       objectReference: {fileID: 0}
+    - target: {fileID: 2725780513483909283, guid: 24340aca94205a443bc81ba333e0d849, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2725780513483909292, guid: 24340aca94205a443bc81ba333e0d849, type: 3}
       propertyPath: m_RootOrder
       value: 9

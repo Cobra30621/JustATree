@@ -133,15 +133,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   growSpeed: 10
   refDist: 5
-  diameter: 0.4
+  diameter: 0.2
   snakeMode: 0
   rootList:
   - {fileID: 5478053791979939240}
   - {fileID: 2958185219435133114}
   isMoving: 0
-  newBodyParent: {fileID: 0}
   spawnTimeCooling: 0.02
   newRootSegment: {fileID: 7280175650980343291, guid: 4a770f4d140e688468fb618b51b07429, type: 3}
+  drawController: {fileID: 0}
 --- !u!58 &5478053791979939236
 CircleCollider2D:
   m_ObjectHideFlags: 0

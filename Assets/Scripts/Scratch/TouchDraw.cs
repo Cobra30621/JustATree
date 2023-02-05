@@ -50,6 +50,7 @@ public class TouchDraw : MonoBehaviour
 
     IEnumerator DrawLine()
     {
+        WaitForSeconds waitForSeconds = new WaitForSeconds(0.2f);
         GameObject newGameObject = Instantiate(linePrefab, new Vector3(0, 0, 0), Quaternion.identity);
         LineRenderer line = newGameObject.GetComponent<LineRenderer>();
         drawnLineRenderers.Add(line);
@@ -65,11 +66,11 @@ public class TouchDraw : MonoBehaviour
             position.z = 0;
             Vector3 direction = position - prePosition;
             prePosition = position;
-            position += direction.normalized * 2f;
+            position += direction.normalized * 3f;
             line.positionCount++;
             line.SetPosition(line.positionCount - 1, position);
             scratchScript.AssignScreenAsMask();
-            yield return null;
+            yield return waitForSeconds;
         }
     }
 }
