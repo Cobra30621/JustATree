@@ -23,10 +23,12 @@ public class GameManager : MonoBehaviour
     /// <summary>每幾秒鐘出一波敵人 </summary>
     public float nextWaveTime = 100;
 
-    [Header("End Prefabs")] 
     public GameObject[] EndPrefabs;
-
     public Transform EndSpawnTransform;
+    
+    public float start_time = 10;
+    public float timer; 
+    public bool gameOver; // once set to true, the microgame will exit
 
     private void Awake()
     {
@@ -36,9 +38,30 @@ public class GameManager : MonoBehaviour
             Destroy(this);
     }
 
+    void Start()
+    {
+        Reset();
+    }
+
     private void Reset()
     {
         nowWave = 0;
+        timer = start_time;
+    }
+
+    void Update()
+    {
+        Countdown();
+    }
+    
+    void Countdown(){
+        if(gameOver){return;}
+
+        timer -= Time.deltaTime;
+        if(timer < 0){
+            gameOver = true;
+            PlayEnd(EndType.TimeOut);
+        }
     }
 
     public void GameOver()
@@ -55,21 +78,21 @@ public class GameManager : MonoBehaviour
     
     public void PlayEnd(EndType endType )
     {
-        switch (endType)
+        if (EndPrefabs.Length > (int)endType)
         {
-            case EndType.TreeDied:
-                Instantiate(EndPrefabs[0], EndSpawnTransform);
-                break;
-            case EndType.TimeOut:
-                Instantiate(EndPrefabs[1], EndSpawnTransform);
-                break;
+            Instantiate(EndPrefabs[(int)endType], EndSpawnTransform);
+            Debug.Log($"播放結局{endType}");
+        }
+        else
+        {
+            Debug.Log($"尚未放置結局{endType}的 Prefab");
         }
     }
 }
 
 public enum EndType
 {
-    TreeDied, TimeOut, Core, Tentacle, Sky, MuscleProtein
+    TreeDied = 0, TimeOut = 1, Core = 2, Tentacle = 3, Sky= 4, MuscleProtein=5
 }
 
 // public class EndClip{

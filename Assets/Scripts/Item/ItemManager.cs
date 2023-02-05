@@ -62,7 +62,6 @@ public class ItemManager : MonoBehaviour
             hadPickedItems.Add(itemType, 0);
         }
         
-        
     }
 
     public void ItemSpawn()
@@ -96,6 +95,16 @@ public class ItemManager : MonoBehaviour
         currentItemType = itemType;
         Debug.Log($"Pick {itemType} , current count : {hadPickedItems[itemType]}");
         itemController.ShowPickItemPanel(itemType);
+        
+        // Play End
+        if (itemType == ItemType.Tentacle)
+            GameManager.Instance.PlayEnd(EndType.Tentacle);
+        if (itemType == ItemType.Core)
+            GameManager.Instance.PlayEnd(EndType.Core);
+        if (itemType == ItemType.Sky)
+            GameManager.Instance.PlayEnd(EndType.Sky);
+        if(hadPickedItems[ItemType.MuscleProtein] == 5)
+            GameManager.Instance.PlayEnd(EndType.MuscleProtein);
     }
 
     public void OnEnterLayer(int layerIndex)
