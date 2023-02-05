@@ -12,6 +12,7 @@ public class RootHeadController : MonoBehaviour
     public bool snakeMode = false;
     public List<GameObject> rootList;
     private Vector3 mousePosition;
+    public bool isMoving = false;
 
     public float spawnTimeCooling = 0.05f;
     float spawnTimer = 0;
@@ -68,8 +69,25 @@ public class RootHeadController : MonoBehaviour
                         / refDist)) , spawnTimeCooling ,10f); 
                 }
             }
-
+            if (!isMoving)
+            {
+                AudioManager.Instance.StartPlayLoop(0);
+                print("run");
+                isMoving = true;
+            }
         }
+        else
+        {
+            // if not moving than stop sound 
+            if (isMoving)
+            {
+                AudioManager.Instance.StopPlayLoop();
+                isMoving = false;
+            }
+        }
+
+        
+
         // spawn
         if (snakeMode)
         {
