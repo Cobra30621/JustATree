@@ -23,9 +23,6 @@ public class RootHeadController : MonoBehaviour
     [SerializeField]
     GameObject newRootSegment;
     GameObject newBody;
-    
-    [SerializeField]
-    TouchDraw drawController = null;
 
     // Start is called before the first frame update
     void Start()

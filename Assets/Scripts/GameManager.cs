@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Transform headObj = null;
 
+    [SerializeField]
+    public float itemShowDistance = 10f;
+
     public Transform headTransform;
     /// <summary>每幾秒鐘出一波敵人 </summary>
     public float nextWaveTime = 15;

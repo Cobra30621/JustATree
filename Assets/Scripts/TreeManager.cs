@@ -63,7 +63,10 @@ public class TreeManager : MonoBehaviour
                 if (getItemTypeCount >= 3)
                 {
                     Debug.Log("¾ðª¬ºA¤Á´«: skin " + iType.ToString());
-                    treeAnimator.SetTrigger(iType.ToString());
+                    if (iType == ItemType.Cola || iType == ItemType.Kirito || iType == ItemType.Trident)
+                    {
+                        treeAnimator.SetTrigger(iType.ToString());
+                    }
                 }
                 break;
             default:
