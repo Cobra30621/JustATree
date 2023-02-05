@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RootHeadController : MonoBehaviour
 {
+    public float totalDist = 0;
     [Tooltip("Grow Speed in meter/s")]
     public float growSpeed = 5;
     [Tooltip("Max Distance Between")]
@@ -51,7 +52,7 @@ public class RootHeadController : MonoBehaviour
                 transform.position += (mousePosition.transform.position - transform.position).normalized
                     * Mathf.Clamp01((mousePosition.transform.position - transform.position).magnitude / refDist)
                     * growSpeed * Time.deltaTime;
-                transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+                transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
 
             }
             else
@@ -64,11 +65,12 @@ public class RootHeadController : MonoBehaviour
                     newBody.transform.rotation = transform.rotation;
                     rootList.Add(newBody);
                     transform.position += (mousePosition.transform.position - transform.position).normalized * diameter;
+                    totalDist += ((mousePosition.transform.position - transform.position).normalized * diameter).magnitude;
                     //transform.rotation
                     mousePosition.transform.position += new Vector3(0, 0, 100);
                     transform.LookAt(mousePosition.transform, Vector3.back);
                     // set z to 0
-                    transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
                     // reset spawn time
                     spawnTimer = Mathf.Clamp(spawnTimeCooling * 1f / ( 0.00001f  + 
                         Mathf.Clamp01((mousePosition.transform.position - transform.position).magnitude 
