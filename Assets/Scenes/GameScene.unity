@@ -647,6 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList: []
+  itemShowDistance: 10
   headTransform: {fileID: 0}
   nextWaveTime: 15
   nowWave: 0
@@ -690,7 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1503479133059989872, guid: 269f8454eed7381468f90fd48663e190, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1503479133059989873, guid: 269f8454eed7381468f90fd48663e190, type: 3}
       propertyPath: m_Pivot.x

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EndCalculation : MonoBehaviour
 {
+    public GameObject panel;
     public Text totalMutant;
     public Text totalKill;
     public Text totalDamage;
@@ -39,7 +40,7 @@ public class EndCalculation : MonoBehaviour
 
     public void endCalculation()
     {
-        this.gameObject.SetActive(true);
+        panel.SetActive(true);
         totalMutant.text = "";
         totalKill.text = "";
         totalDamage.text = "";

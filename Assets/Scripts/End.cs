@@ -18,6 +18,6 @@ public class End : MonoBehaviour
 
     public void EnterResultPanel()
     {
-        
+        EndCalculation.instance.endCalculation();
     }
 }
