@@ -106,15 +106,9 @@ public class GameManager : MonoBehaviour
         gameOver = true;
     }
 
-    public EndType testEnd;
-    [ContextMenu("test")]
-    public void Test()
-    {
-        PlayEnd(testEnd);
-    }
-
     public void PlayEnd(EndType endType)
     {
+        GameOver();
         if (EndPrefabs.Length > (int)endType)
         {
             Instantiate(EndPrefabs[(int)endType], EndSpawnTransform);
