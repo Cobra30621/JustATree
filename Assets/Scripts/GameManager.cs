@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public List<EnemyAI> enemyList = new List<EnemyAI>();
 
+    public Transform headTransform;
     /// <summary>每幾秒鐘出一波敵人 </summary>
     public float nextWaveTime = 15;
 
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] EndPrefabs;
     public Transform EndSpawnTransform;
     
-    public float start_time = 10;
+    public float start_time = 1000;
     public float timer; 
     public bool gameOver; // once set to true, the microgame will exit
 

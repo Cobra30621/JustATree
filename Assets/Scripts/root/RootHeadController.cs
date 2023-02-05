@@ -22,11 +22,15 @@ public class RootHeadController : MonoBehaviour
     [SerializeField]
     GameObject newRootSegment;
     GameObject newBody;
+    
+    [SerializeField]
+    TouchDraw drawController = null;
 
     // Start is called before the first frame update
     void Start()
     {
         initPos = transform.position;
+        GameManager.Instance.headTransform = transform;
     }
 
     // Update is called once per frame
@@ -75,9 +79,15 @@ public class RootHeadController : MonoBehaviour
                 print("run");
                 isMoving = true;
             }
+            drawController.StartLine();
         }
         else
         {
+            if (Input.GetMouseButtonUp(0))
+            {
+                drawController.FinishLine();
+            }
+
             // if not moving than stop sound 
             if (isMoving)
             {
