@@ -60,9 +60,11 @@ public class GameManager : MonoBehaviour
             case EndType.TreeDied:
                 Instantiate(EndPrefabs[0], EndSpawnTransform);
                 break;
+            case EndType.TimeOut:
+                Instantiate(EndPrefabs[1], EndSpawnTransform);
+                break;
         }
     }
-    
 }
 
 public enum EndType

@@ -440,7 +440,9 @@ MonoBehaviour:
   enemyList: []
   nowWave: 0
   nextWaveTime: 15
-  treeDiedEnd: {fileID: 9174141325161053647, guid: ba374b149ebbc8345ace91144f242d21, type: 3}
+  EndPrefabs:
+  - {fileID: 9174141325161053647, guid: ba374b149ebbc8345ace91144f242d21, type: 3}
+  - {fileID: 9185630409426316417, guid: 0b465d28dee6f724aa1b1f793f4cb3ad, type: 3}
   EndSpawnTransform: {fileID: 766134833}
   testEnd: 0
 --- !u!4 &210442609
