@@ -18,6 +18,7 @@ public class End : MonoBehaviour
 
     public void EnterResultPanel()
     {
+        Debug.Log("EnterResultPane");
         EndCalculation.instance.endCalculation();
     }
 }
