@@ -16,7 +16,7 @@ public class ItemManager : MonoBehaviour
             return instance;
         }
     }
-    private static ItemManager instance; 
+    private static ItemManager instance;
     public ItemController itemController;
     public ItemStage itemStage;
     public ItemDataList itemDataList;
@@ -28,12 +28,17 @@ public class ItemManager : MonoBehaviour
 
     public ItemType currentItemType;
     public int currentLayerIndex;
-    
+
+    /// <summary>總共撿取物品數 </summary>
+    public int totalItemPicked = 0;
+
+    //撿取物品觸發的事件 給樹切換狀態用
+    public Action<ItemType> onItemPick;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         GameStart();
     }
 
@@ -61,8 +66,9 @@ public class ItemManager : MonoBehaviour
         {
             hadPickedItems.Add(itemType, 0);
         }
-        
-        
+
+        totalItemPicked = 0;
+
     }
 
     public void ItemSpawn()
@@ -92,10 +98,19 @@ public class ItemManager : MonoBehaviour
 
     public void OnItemPicked(ItemType itemType)
     {
+        totalItemPicked++;
         hadPickedItems[itemType] += 1;
         currentItemType = itemType;
         Debug.Log($"Pick {itemType} , current count : {hadPickedItems[itemType]}");
         itemController.ShowPickItemPanel(itemType);
+
+        if (onItemPick != null)
+            onItemPick(itemType);
+    }
+
+    public int PickedItemCount(ItemType itemType)
+    {
+        return hadPickedItems[itemType];
     }
 
     public void OnEnterLayer(int layerIndex)
@@ -110,6 +125,12 @@ public class ItemManager : MonoBehaviour
 [Serializable]
 public enum ItemType
 {
-    Seed, Kirito, Trident,  Cola,
-    MuscleProtein, Tentacle, Sky, Core
+    Seed,
+    Kirito,
+    Trident,
+    Cola,
+    MuscleProtein,
+    Tentacle,
+    Sky,
+    Core
 }

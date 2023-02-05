@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,10 +20,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public List<EnemyAI> enemyList = new List<EnemyAI>();
 
-    public int nowWave = 0;
     /// <summary>每幾秒鐘出一波敵人 </summary>
-    public float nextWaveTime = 100;
+    public float nextWaveTime = 15;
 
+    /// <summary>當前生成敵人波次 (超過設定會取用max波次值) </summary>
+    public int nowWave = 0;
     [Header("End Prefabs")] 
     public GameObject[] EndPrefabs;
 
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
             Destroy(this);
     }
 
-    private void Reset()
+    private void Reset() //參數初始化
     {
         nowWave = 0;
     }
