@@ -187,7 +187,7 @@ MonoBehaviour:
   itemStage: {fileID: 11400000, guid: f2ff729c87027e4408d6ca22475d33f2, type: 2}
   itemDataList: {fileID: 11400000, guid: fe106fbe3f6cddb489d54305cc84e180, type: 2}
   itemSpawnTransform: {fileID: 1059731089}
-  groundWidth: 75
+  groundWidth: 100
   currentItemType: 0
   currentLayerIndex: 0
 --- !u!4 &77976969

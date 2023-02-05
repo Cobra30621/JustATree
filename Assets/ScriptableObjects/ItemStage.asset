@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb5165f81ec18a42b917a34e4d9973b, type: 3}
   m_Name: ItemStage
   m_EditorClassIdentifier: 
+  layerDepth: 7.5
   Layers:
   - maxDepth: 7.5
     itemClips:

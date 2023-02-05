@@ -67,11 +67,11 @@ public class ItemManager : MonoBehaviour
 
     public void ItemSpawn()
     {
-        float preLayerY = 0;
         float xScale = 0.5f;
+        int layerIndex = 0;
         foreach (Layer layer in itemStage.Layers)
         {
-            
+            float layerDepth = itemStage.layerDepth;
             foreach (ItemClip itemClip in layer.itemClips)
             {
                 ItemType itemType = itemClip.itemType;
@@ -80,13 +80,13 @@ public class ItemManager : MonoBehaviour
                     Item item = Instantiate(itemDataDictionary[itemType].prefab, itemSpawnTransform).GetComponent<Item>();
 
                     float x = UnityEngine.Random.Range(- (groundWidth / 2) * xScale, (groundWidth / 2) * xScale);
-                    float y = - UnityEngine.Random.Range(preLayerY + 0.5f, layer.maxDepth - 0.5f);
+                    float y = - UnityEngine.Random.Range(layerDepth * layerIndex + 0.5f, layerDepth * (layerIndex + 1) - 0.5f);
                     item.transform.position =  new Vector2(x, y);
                     item.SetManager(this);
                 }
             }
-            preLayerY = layer.maxDepth;
             xScale += 0.1f;
+            layerIndex += 1;
         }
     }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName= "ItemStage", menuName= "Create ItemStage")]
 public class ItemStage : ScriptableObject
 {
+    public float layerDepth;
     public List<Layer> Layers;
     
 }
