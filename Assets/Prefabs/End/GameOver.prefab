@@ -399,11 +399,7 @@ GameObject:
   - component: {fileID: 9174141325161053646}
   - component: {fileID: 9174141325161053633}
   - component: {fileID: 5103122607541161636}
-<<<<<<< HEAD
-  - component: {fileID: 3768154257950702001}
-=======
   - component: {fileID: 6806513227163090371}
->>>>>>> cc707db24f87956392fac898f6facd8b517ca8a9
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -438,7 +434,7 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &9174141325161053633
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -455,7 +451,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!225 &5103122607541161636
 CanvasGroup:
   m_ObjectHideFlags: 0
