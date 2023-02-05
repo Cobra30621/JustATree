@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   _itemManager: {fileID: 0}
+  mySprite: {fileID: 4114969610811844603}
 --- !u!58 &8917011449815933778
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -17,8 +17,12 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager instance;
+
     [SerializeField]
     public List<EnemyAI> enemyList = new List<EnemyAI>();
+
+    [SerializeField]
+    Transform headObj = null;
 
     public Transform headTransform;
     /// <summary>每幾秒鐘出一波敵人 </summary>
@@ -26,12 +30,12 @@ public class GameManager : MonoBehaviour
 
     /// <summary>當前生成敵人波次 (超過設定會取用max波次值) </summary>
     public int nowWave = 0;
-    [Header("End Prefabs")] 
+    [Header("End Prefabs")]
     public GameObject[] EndPrefabs;
     public Transform EndSpawnTransform;
-    
+
     public float start_time = 1000;
-    public float timer; 
+    public float timer;
     public bool gameOver; // once set to true, the microgame will exit
 
     private void Awake()
@@ -57,12 +61,14 @@ public class GameManager : MonoBehaviour
     {
         Countdown();
     }
-    
-    void Countdown(){
-        if(gameOver){return;}
+
+    void Countdown()
+    {
+        if (gameOver) { return; }
 
         timer -= Time.deltaTime;
-        if(timer < 0){
+        if (timer < 0)
+        {
             gameOver = true;
             PlayEnd(EndType.TimeOut);
         }
@@ -79,8 +85,8 @@ public class GameManager : MonoBehaviour
     {
         PlayEnd(testEnd);
     }
-    
-    public void PlayEnd(EndType endType )
+
+    public void PlayEnd(EndType endType)
     {
         if (EndPrefabs.Length > (int)endType)
         {
@@ -91,6 +97,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log($"尚未放置結局{endType}的 Prefab");
         }
+    }
+
+    public float GetDistanceFromHead(Transform obj)
+    {
+        return Vector3.Distance(headObj.position, obj.position);
     }
 }
 

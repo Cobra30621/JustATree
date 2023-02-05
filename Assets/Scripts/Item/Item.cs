@@ -8,7 +8,15 @@ public class Item : MonoBehaviour
     public ItemType itemType;
     [SerializeField]
     private ItemManager _itemManager;
-
+    [SerializeField]
+    SpriteRenderer mySprite;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            CheckAlpha();
+        }
+    }
     public void SetManager(ItemManager itemManager)
     {
         _itemManager = itemManager;
@@ -23,6 +31,13 @@ public class Item : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void CheckAlpha()
+    {
+        float distance = GameManager.Instance.GetDistanceFromHead(this.transform);
+        Debug.Log("¶ZÂ÷head:" + distance);
+    }
+
 }
 
 
