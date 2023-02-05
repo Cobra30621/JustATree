@@ -37,7 +37,7 @@ MonoBehaviour:
     name: "\u4E73\u6E05"
     description: "\u52AA\u529B\u3001\u672A\u4F86\u3001A beautiful star"
     prefab: {fileID: 1559975746822796605, guid: 514ef57a8ae9e5546b113d0b02260ada, type: 3}
-    sprite: {fileID: 21300000, guid: b794cea17fd939647a76e2f882d26e4e, type: 3}
+    sprite: {fileID: 21300000, guid: 3ed5a3bbc437c3f49af7b702772393b0, type: 3}
   - itemType: 5
     name: "\u795E\u79D8\u773C\u775B"
     description: "\u89F8\u624B\u8B9A"
