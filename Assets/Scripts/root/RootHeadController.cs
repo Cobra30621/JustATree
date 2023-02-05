@@ -71,7 +71,7 @@ public class RootHeadController : MonoBehaviour
             }
             if (!isMoving)
             {
-                AudioManager.Instance.StartPlayLoop(0);
+                AudioManager.Instance.StartPlayLoop(5);
                 print("run");
                 isMoving = true;
             }
