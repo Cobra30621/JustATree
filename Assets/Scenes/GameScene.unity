@@ -218,10 +218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1840328054}
     m_Modifications:
-    - target: {fileID: 4392959985141942301, guid: 95f092ab2f29d774a950c5926ef2ed98, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4392959985173666736, guid: 95f092ab2f29d774a950c5926ef2ed98, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -597,10 +593,6 @@ PrefabInstance:
     - target: {fileID: 1503479133059989872, guid: 269f8454eed7381468f90fd48663e190, type: 3}
       propertyPath: m_Name
       value: End UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1503479133059989872, guid: 269f8454eed7381468f90fd48663e190, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1503479133059989873, guid: 269f8454eed7381468f90fd48663e190, type: 3}
       propertyPath: m_Pivot.x

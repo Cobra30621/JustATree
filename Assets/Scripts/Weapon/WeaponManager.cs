@@ -87,25 +87,25 @@ public class WeaponManager : MonoBehaviour
 
 		return closestEnemy;
 	}
-
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(100,100,100,100),"Apple"))
-        {
-			GetWeapon(ItemType.Seed);
-			// Instantiate(enemyAPrefab, transform.position, transform.rotation);
-        }
-        if (GUI.Button(new Rect(100,200,100,100),"SWORD"))
-        {
-			GetWeapon(ItemType.Kirito);
-        }
-        if (GUI.Button(new Rect(100,300,100,100),"COLA"))
-        {
-			GetWeapon(ItemType.Cola);
-        }
-        if (GUI.Button(new Rect(100,400,100,100),"TRIDENT"))
-        {
-			GetWeapon(ItemType.Trident);
-        }
-    }
+   //
+   //  void OnGUI()
+   //  {
+   //      if (GUI.Button(new Rect(100,100,100,100),"Apple"))
+   //      {
+			// GetWeapon(ItemType.Seed);
+			// // Instantiate(enemyAPrefab, transform.position, transform.rotation);
+   //      }
+   //      if (GUI.Button(new Rect(100,200,100,100),"SWORD"))
+   //      {
+			// GetWeapon(ItemType.Kirito);
+   //      }
+   //      if (GUI.Button(new Rect(100,300,100,100),"COLA"))
+   //      {
+			// GetWeapon(ItemType.Cola);
+   //      }
+   //      if (GUI.Button(new Rect(100,400,100,100),"TRIDENT"))
+   //      {
+			// GetWeapon(ItemType.Trident);
+   //      }
+   //  }
 }
